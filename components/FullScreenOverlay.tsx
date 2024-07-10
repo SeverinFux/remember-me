@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, StyleSheet, View, Image, TouchableOpacity } from 'react-native';
+import {Image, Modal, StyleSheet, TouchableOpacity, View} from 'react-native';
 
 interface FullScreenOverlayProps {
     visible: boolean;
@@ -7,7 +7,7 @@ interface FullScreenOverlayProps {
     onClose: () => void;
 }
 
-const FullScreenOverlay: React.FC<FullScreenOverlayProps> = ({ visible, imageUri, onClose }) => {
+const FullScreenOverlay: React.FC<FullScreenOverlayProps> = ({visible, imageUri, onClose}) => {
     if (!imageUri) {
         return null;
     }
@@ -18,10 +18,13 @@ const FullScreenOverlay: React.FC<FullScreenOverlayProps> = ({ visible, imageUri
             transparent={true}
             animationType="fade"
             onRequestClose={onClose}
+
         >
-            <View style={styles.container}>
-                <TouchableOpacity style={styles.imageContainer} onPress={onClose}>
-                    <Image source={{ uri: imageUri }} style={styles.image} />
+            <View style={styles.container} onTouchStart={onClose}>
+                <TouchableOpacity style={styles.imageContainer} onPress={onClose} >
+                    {//@ts-ignore
+                    <Image source={{uri: imageUri}} style={styles.image} width={'100%'} height={'100%'}/>
+                    }
                 </TouchableOpacity>
             </View>
         </Modal>
@@ -31,13 +34,18 @@ const FullScreenOverlay: React.FC<FullScreenOverlayProps> = ({ visible, imageUri
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0,0,0,0.5)'
     },
     imageContainer: {
-
+        width: '90%',
+        aspectRatio: 1, // This maintains the aspect ratio of the image
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     image: {
-        width: '100%'
-    },
-});
-
+        resizeMode: 'contain'
+    }
+})
 export default FullScreenOverlay;

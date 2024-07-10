@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 import {initializeApp} from "firebase/app";
-import {getAnalytics} from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
+
+import {getDatabase} from "firebase/database";
+// TODO: Home SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
@@ -15,10 +16,8 @@ const firebaseConfig = {
     messagingSenderId: "351847013821",
     appId: "1:351847013821:web:17ea89fdded586638c86d4",
     measurementId: "G-DLN90S7FHT",
-    databaseURL: "https://remember-me-999ff-default-rtdb.europe-west1.firebasedatabase.app"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const database = getDatabase(app);
-const analytics = getAnalytics(app);
+export  const useDatabase = getDatabase(app);

@@ -82,3 +82,7 @@ Natürlich, hier ist eine kurze Übersicht der wichtigsten Komponenten und der P
 - **theme.ts** und **themeContext.ts**: Verwaltung und Bereitstellung von Thema und Stil der App.
 
 ah und natürlich "CuStOm LoAdInG ScReEnS" :)
+
+
+Figma  - App store : https://www.figma.com/design/Gv5cxNKs1cdVllpM4GJXnU/Remember-Me-AppStore?node-id=4-2997&t=YQPQIRp1eI6LptLH-0
+Figma - App Over View: https://www.figma.com/design/cNL2BRSbUOkvhEl8H3cnil/Rember-Me?node-id=1-2&t=TwPqgaxA9yUu73SM-1
